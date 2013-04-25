@@ -44,7 +44,7 @@ RSpec.configuration.include RSpec::JsonMatcher
   }
 ].to_json.should be_json([
   {
-    "url"          => /^invalid pattern$/,
+    "url"          => /^https:/,
     "id"           => /^\d+$/,
     "description"  => /gist/,
     "public"       => true,
