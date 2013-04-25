@@ -9,7 +9,7 @@ module RSpec
     end
 
     class Matcher
-      attr_reader :expected
+      attr_reader :expected, :parsed
 
       def initialize(expected = nil)
         @expected = expected
@@ -18,7 +18,7 @@ module RSpec
       def matches?(json)
         @parsed = JSON.parse(json)
         if has_expectation?
-          Comparer.compare(@parsed, expected)
+          Comparer.compare(parsed, expected)
         else
           true
         end
@@ -58,7 +58,7 @@ module RSpec
       end
 
       def inspection(prefix = nil)
-        ["expected #{prefix}to match:", @expected.ai, "", "actual:", @parsed.ai].join("\n")
+        ["expected #{prefix}to match:", expected.ai, "", "actual:", parsed.ai].join("\n")
       end
     end
 
@@ -75,7 +75,7 @@ module RSpec
       end
 
       def compare
-        has_same_value?
+        has_equal_value? || has_same_collection?
       end
 
       private
@@ -86,10 +86,6 @@ module RSpec
 
       def has_same_size?
         actual.size == expected.size
-      end
-
-      def has_same_value?
-        has_equal_value? || has_same_collection?
       end
 
       def has_equal_value?
