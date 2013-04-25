@@ -1,6 +1,6 @@
 require "rspec/json_matcher/version"
 
-module Rspec
+module RSpec
   module JsonMatcher
     # Your code goes here...
   end

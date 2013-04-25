@@ -5,7 +5,7 @@ require "rspec/json_matcher/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "rspec-json_matcher"
-  spec.version       = Rspec::JsonMatcher::VERSION
+  spec.version       = RSpec::JsonMatcher::VERSION
   spec.authors       = ["Ryo Nakamura"]
   spec.email         = ["r7kamura@gmail.com"]
   spec.description   = "This library provides RSpec matcher for testing JSON string."
