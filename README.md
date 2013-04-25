@@ -1,16 +1,17 @@
 # RSpec::JsonMatcher
 This library provides RSpec matcher for testing JSON string.
 
-## Usage
-```ruby
-# spec/spec_helper.rb
-RSpec.configuration.include RSpec::JsonMatcher
-```
-
-### Features
 * parsing a given value as JSON string
 * handy pattern matching with `#===` method like case-when statement
 * supporting nested pattern matching
+
+## Usage
+### Configuration
+```ruby
+# spec/spec_helper.rb
+require "rspec/json_matcher"
+RSpec.configuration.include RSpec::JsonMatcher
+```
 
 ### Example
 ```ruby
