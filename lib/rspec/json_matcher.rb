@@ -75,7 +75,7 @@ module RSpec
       end
 
       def compare
-        has_equal_value? || has_same_collection?
+        has_same_value? || has_same_collection?
       end
 
       private
@@ -88,7 +88,7 @@ module RSpec
         actual.size == expected.size
       end
 
-      def has_equal_value?
+      def has_same_value?
         if expected.respond_to?(:call)
           expected.call(actual)
         else
