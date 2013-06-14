@@ -58,7 +58,7 @@ module RSpec
       end
 
       def inspection(prefix = nil)
-        ["expected #{prefix}to match:", expected.ai, "", "actual:", parsed.ai].join("\n")
+        ["expected #{prefix}to match:", expected.ai(indent: -2), "", "actual:", parsed.ai(indent: -2)].join("\n")
       end
     end
 
