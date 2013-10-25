@@ -69,6 +69,14 @@ module RSpec
         new(*args).compare
       end
 
+      def self.extract_keys(array_or_hash)
+        if array_or_hash.is_a?(Array)
+          array_or_hash.each_index.to_a
+        else
+          array_or_hash.keys
+        end
+      end
+
       def initialize(actual, expected)
         @actual   = actual
         @expected = expected
@@ -84,8 +92,8 @@ module RSpec
         actual.class == expected.class
       end
 
-      def has_same_size?
-        actual.size == expected.size
+      def has_same_keys?
+        (self.class.extract_keys(actual) - self.class.extract_keys(expected)).size == 0
       end
 
       def has_same_value?
@@ -97,24 +105,15 @@ module RSpec
       end
 
       def has_same_collection?
-        collection? && has_same_class? && has_same_size? && has_same_key_values?
+        collection? && has_same_class? && has_same_keys? && has_same_values?
       end
 
-      def has_same_key_values?
-        keys.all? {|key| self.class.compare(actual[key], expected[key]) }
+      def has_same_values?
+        self.class.extract_keys(actual).all? {|key| self.class.compare(actual[key], expected[key]) }
       end
 
       def collection?
         actual.is_a?(Array) || actual.is_a?(Hash)
-      end
-
-      def keys
-        case actual
-        when Array
-          actual.each_index
-        when Hash
-          actual.keys
-        end
       end
     end
   end

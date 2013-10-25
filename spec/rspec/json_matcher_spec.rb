@@ -2,8 +2,18 @@ require "spec_helper"
 
 describe RSpec::JsonMatcher do
   context "with invalid JSON" do
-    it "does match" do
+    it "does not match" do
       "".should_not be_json
+    end
+  end
+
+  context "with invalid keys JSON" do
+    it "does not match" do
+      {
+        "a" => nil
+      }.to_json.should_not be_json(
+        "b" => nil
+      )
     end
   end
 
