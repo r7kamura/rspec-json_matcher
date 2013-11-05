@@ -42,7 +42,7 @@ RSpec.configuration.include RSpec::JsonMatcher
     "git_push_url" => "git@gist.github.com:1.git",
     "created_at" => "2010-04-14T02:15:15Z"
   }
-].to_json.should be_json([
+].to_json.should be_json_as([
   {
     "url"          => /^https:/,
     "id"           => /^\d+$/,
@@ -62,3 +62,14 @@ RSpec.configuration.include RSpec::JsonMatcher
 
 ### Failure message
 ![](http://dl.dropbox.com/u/5978869/image/20130426_005849.png)
+
+## Matchers
+* be_json
+* be_json_including
+* be_json_as
+
+```ruby
+{ "a" => "b", "c" => "d" }.to_json.should be_json
+{ "a" => "b", "c" => "d" }.to_json.should be_json_including("a" => "b")
+{ "a" => "b", "c" => "d" }.to_json.should be_json_as("a" => "b", "c" => "d")
+```
