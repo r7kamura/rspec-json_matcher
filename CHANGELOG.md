@@ -1,3 +1,6 @@
+## 0.1.0
+* Change interface to be_json_including & be_json_as matchers
+
 ## 0.0.6
 * Fix a bug in comparison with Hash keys
 
