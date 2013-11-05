@@ -13,6 +13,17 @@ require "rspec/json_matcher"
 RSpec.configuration.include RSpec::JsonMatcher
 ```
 
+### Matchers
+* be_json
+* be_json_including
+* be_json_as
+
+```ruby
+{ "a" => "b", "c" => "d" }.to_json.should be_json
+{ "a" => "b", "c" => "d" }.to_json.should be_json_including("a" => "b")
+{ "a" => "b", "c" => "d" }.to_json.should be_json_as("a" => "b", "c" => "d")
+```
+
 ### Example
 ```ruby
 [
@@ -62,14 +73,3 @@ RSpec.configuration.include RSpec::JsonMatcher
 
 ### Failure message
 ![](http://dl.dropbox.com/u/5978869/image/20130426_005849.png)
-
-## Matchers
-* be_json
-* be_json_including
-* be_json_as
-
-```ruby
-{ "a" => "b", "c" => "d" }.to_json.should be_json
-{ "a" => "b", "c" => "d" }.to_json.should be_json_including("a" => "b")
-{ "a" => "b", "c" => "d" }.to_json.should be_json_as("a" => "b", "c" => "d")
-```
