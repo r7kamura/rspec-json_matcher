@@ -5,10 +5,18 @@ require "awesome_print"
 module RSpec
   module JsonMatcher
     def be_json(expected = nil)
-      Matcher.new(expected)
+      ExactMatcher.new(expected)
     end
 
-    class Matcher
+    def be_json_as(expected)
+      ExactMatcher.new(expected)
+    end
+
+    def be_json_including(expected)
+      FuzzyMatcher.new(expected)
+    end
+
+    class AbstractMatcher
       attr_reader :expected, :parsed
 
       def initialize(expected = nil)
@@ -18,13 +26,17 @@ module RSpec
       def matches?(json)
         @parsed = JSON.parse(json)
         if has_expectation?
-          Comparer.compare(parsed, expected)
+          compare
         else
           true
         end
       rescue JSON::ParserError
         @parser_error = true
         false
+      end
+
+      def compare
+        raise NotImplementedError, "You must implement #{self.class}#compare"
       end
 
       def description
@@ -62,7 +74,19 @@ module RSpec
       end
     end
 
-    class Comparer
+    class ExactMatcher < AbstractMatcher
+      def compare
+        ExactComparer.compare(parsed, expected)
+      end
+    end
+
+    class FuzzyMatcher < AbstractMatcher
+      def compare
+        FuzzyComparer.compare(parsed, expected)
+      end
+    end
+
+    class AbstractComparer
       attr_reader :actual, :expected
 
       def self.compare(*args)
@@ -105,15 +129,39 @@ module RSpec
       end
 
       def has_same_collection?
-        collection? && has_same_class? && has_same_keys? && has_same_values?
+        raise NotImplementedError, "You must implement #{self.class}#has_same_collection?"
       end
 
       def has_same_values?
-        self.class.extract_keys(actual).all? {|key| self.class.compare(actual[key], expected[key]) }
+        if expected.is_a?(Array)
+          expected.each_index.all? do |index|
+            index < actual.size && self.class.compare(actual[index], expected[index])
+          end
+        else
+          expected.keys.all? do |key|
+            actual.has_key?(key) && self.class.compare(actual[key], expected[key])
+          end
+        end
       end
 
       def collection?
         actual.is_a?(Array) || actual.is_a?(Hash)
+      end
+    end
+
+    class FuzzyComparer < AbstractComparer
+      private
+
+      def has_same_collection?
+        collection? && has_same_class? && has_same_values?
+      end
+    end
+
+    class ExactComparer < AbstractComparer
+      private
+
+      def has_same_collection?
+        collection? && has_same_class? && has_same_keys? && has_same_values?
       end
     end
   end
