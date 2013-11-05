@@ -93,7 +93,7 @@ module RSpec
       end
 
       def has_same_keys?
-        (self.class.extract_keys(actual) - self.class.extract_keys(expected)).size == 0
+        self.class.extract_keys(actual).sort == self.class.extract_keys(expected).sort
       end
 
       def has_same_value?

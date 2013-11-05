@@ -17,6 +17,17 @@ describe RSpec::JsonMatcher do
     end
   end
 
+  context "with non-existent keys in JSON" do
+    it "does not match" do
+      {
+        "a" => nil,
+      }.to_json.should_not be_json(
+        "a" => nil,
+        "b" => nil,
+      )
+    end
+  end
+
   context "with valid JSON" do
     it "matches with handy patterns" do
       [
