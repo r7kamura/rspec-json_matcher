@@ -1,3 +1,6 @@
+## 0.0.6
+* Fix a bug in comparison with Hash keys
+
 ## 0.0.5
 * More strict comparison to detect different Hash keys
 
