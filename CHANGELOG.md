@@ -1,3 +1,6 @@
+## 0.1.1
+* Suppress deprecation warnings for RSpec 3
+
 ## 0.1.0
 * Change interface to be_json_including & be_json_as matchers
 
