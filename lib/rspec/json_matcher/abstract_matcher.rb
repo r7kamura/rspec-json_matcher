@@ -27,7 +27,7 @@ module RSpec
         "be JSON"
       end
 
-      def failure_message_for_should
+      def failure_message
         if has_parser_error?
           "expected value to be parsed as JSON, but failed"
         else
@@ -35,7 +35,7 @@ module RSpec
         end
       end
 
-      def failure_message_for_should_not
+      def failure_message_when_negated
         if has_parser_error?
           "expected value not to be parsed as JSON, but succeeded"
         else
