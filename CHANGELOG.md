@@ -1,3 +1,6 @@
+## 0.1.2
+* Convert keys in expectation from Symbol to String
+
 ## 0.1.1
 * Suppress deprecation warnings for RSpec 3
 
