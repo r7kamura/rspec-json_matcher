@@ -168,6 +168,12 @@ describe RSpec::JsonMatcher do
         ])
       end
     end
+
+    context "with symbol keys expectation" do
+      it "matches" do
+        { "foo" => "bar" }.to_json.should be_json_as(foo: "bar")
+      end
+    end
   end
 
   describe "#be_json_including" do

@@ -11,7 +11,7 @@ module RSpec
         if array_or_hash.is_a?(Array)
           array_or_hash.each_index.to_a
         else
-          array_or_hash.keys
+          array_or_hash.keys.map(&:to_s)
         end
       end
 
@@ -53,7 +53,7 @@ module RSpec
           end
         else
           expected.keys.all? do |key|
-            actual.has_key?(key) && self.class.compare(actual[key], expected[key])
+            actual.has_key?(key.to_s) && self.class.compare(actual[key.to_s], expected[key])
           end
         end
       end
