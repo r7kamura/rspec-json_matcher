@@ -1,4 +1,7 @@
 ## 0.1.2
+* Fix method name for negative case
+
+## 0.1.2
 * Convert keys in expectation from Symbol to String
 
 ## 0.1.1
