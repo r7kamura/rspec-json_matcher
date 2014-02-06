@@ -35,7 +35,7 @@ module RSpec
         end
       end
 
-      def failure_message_when_negated
+      def negative_failure_message
         if has_parser_error?
           "expected value not to be parsed as JSON, but succeeded"
         else
