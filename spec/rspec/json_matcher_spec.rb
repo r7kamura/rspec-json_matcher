@@ -217,6 +217,18 @@ describe RSpec::JsonMatcher do
       end
     end
 
+    context "with partially different set" do
+      it "does not match" do
+        {
+          "a" => 1,
+          "b" => 2,
+        }.to_json.should_not be_json_including(
+          "a" => 0,
+          "b" => 2,
+        )
+      end
+    end
+
     context "with same keys and values" do
       it "matches" do
         {
