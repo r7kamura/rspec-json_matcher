@@ -42,6 +42,7 @@ module RSpec
           inspection("not ")
         end
       end
+      alias :failure_message_when_negated :negative_failure_message
 
       private
 
