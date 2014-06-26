@@ -1,3 +1,6 @@
+## 0.1.4
+* Support RSpec 3 style negative failure message
+
 ## 0.1.3
 * Fix method name for negative case
 
