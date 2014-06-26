@@ -1,5 +1,8 @@
-## 0.1.2
+## 0.1.3
 * Fix method name for negative case
+
+## 0.1.2
+* Convert keys in expectation from Symbol to String
 
 ## 0.1.2
 * Convert keys in expectation from Symbol to String
