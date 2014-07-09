@@ -1,16 +1,19 @@
 module RSpec
   module JsonMatcher
     class AbstractMatcher
-      attr_reader :expected, :parsed
+      attr_reader :expected, :parsed, :reasons
 
       def initialize(expected = nil)
         @expected = expected
+        @reasons = []
       end
 
       def matches?(json)
         @parsed = JSON.parse(json)
         if has_expectation?
-          compare
+          compare do |reason|
+            @reasons << reason
+          end
         else
           true
         end
@@ -19,7 +22,7 @@ module RSpec
         false
       end
 
-      def compare
+      def compare(&reason)
         raise NotImplementedError, "You must implement #{self.class}#compare"
       end
 
@@ -55,7 +58,9 @@ module RSpec
       end
 
       def inspection(prefix = nil)
-        ["expected #{prefix}to match:", expected.ai(indent: -2), "", "actual:", parsed.ai(indent: -2)].join("\n")
+        messages = ["expected #{prefix}to match:", expected.ai(indent: -2), "", "actual:", parsed.ai(indent: -2), ""]
+        messages.push "reason: #{reasons.reverse.join(".")}" unless reasons.empty?
+        messages.join("\n")
       end
     end
   end

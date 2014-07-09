@@ -1,8 +1,8 @@
 module RSpec
   module JsonMatcher
     class ExactMatcher < AbstractMatcher
-      def compare
-        ExactComparer.compare(parsed, expected)
+      def compare(&reason)
+        ExactComparer.compare(parsed, expected, &reason)
       end
     end
   end
