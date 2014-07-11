@@ -1,3 +1,6 @@
+## 0.1.5
+* Show reasons in failure case
+
 ## 0.1.4
 * Support RSpec 3 style negative failure message
 
