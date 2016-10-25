@@ -22,6 +22,8 @@ module RSpec
         false
       end
 
+      alias_method :===, :matches?
+
       def compare(&reason)
         raise NotImplementedError, "You must implement #{self.class}#compare"
       end

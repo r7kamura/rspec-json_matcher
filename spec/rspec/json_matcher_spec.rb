@@ -13,6 +13,14 @@ describe RSpec::JsonMatcher do
         {}.to_json.should be_json
       end
     end
+
+    context 'when used with a composable matcher' do
+      it 'matches' do
+        {
+          "a" => {"b" => 1}.to_json
+        }.should match("a" => be_json)
+      end
+    end
   end
 
   describe "#be_json_as" do
@@ -174,6 +182,14 @@ describe RSpec::JsonMatcher do
         { "foo" => "bar" }.to_json.should be_json_as(foo: "bar")
       end
     end
+
+    context 'when used with a composable matcher' do
+      it 'matches' do
+        {
+          "a" => {"b" => 1}.to_json
+        }.should match("a" => be_json_as("b" => 1))
+      end
+    end
   end
 
   describe "#be_json_including" do
@@ -291,6 +307,14 @@ describe RSpec::JsonMatcher do
             nil,
           ],
         )
+      end
+    end
+
+    context 'when used with a composable matcher' do
+      it 'matches' do
+        {
+          "a" => {"b" => 1, "c" => 2}.to_json
+        }.should match("a" => be_json_including("b" => 1))
       end
     end
   end
