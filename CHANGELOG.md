@@ -1,3 +1,7 @@
+## v0.1.6
+
+- Support composable matchers and matching arguments usecase
+
 ## v0.1.5
 
 - Show reasons in failure case
