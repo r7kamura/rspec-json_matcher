@@ -1,0 +1,39 @@
+PATH
+  remote: .
+  specs:
+    rspec-json_matcher (0.1.6)
+      amazing_print
+      json
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    amazing_print (1.4.0)
+    diff-lcs (1.5.0)
+    json (2.6.1)
+    rake (13.0.6)
+    rspec (3.11.0)
+      rspec-core (~> 3.11.0)
+      rspec-expectations (~> 3.11.0)
+      rspec-mocks (~> 3.11.0)
+    rspec-core (3.11.0)
+      rspec-support (~> 3.11.0)
+    rspec-expectations (3.11.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.11.0)
+    rspec-mocks (3.11.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.11.0)
+    rspec-support (3.11.0)
+
+PLATFORMS
+  x86_64-linux
+
+DEPENDENCIES
+  bundler
+  rake
+  rspec
+  rspec-json_matcher!
+
+BUNDLED WITH
+   2.3.6
