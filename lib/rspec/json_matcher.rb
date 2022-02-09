@@ -6,7 +6,7 @@ require "rspec/json_matcher/abstract_matcher"
 require "rspec/json_matcher/exact_matcher"
 require "rspec/json_matcher/fuzzy_matcher"
 require "json"
-require "awesome_print"
+require "amazing_print"
 
 module RSpec
   module JsonMatcher
