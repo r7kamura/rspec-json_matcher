@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rspec-json_matcher (0.1.6)
+    rspec-json_matcher (0.2.0)
       amazing_print
       json
 

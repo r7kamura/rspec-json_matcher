@@ -1,3 +1,7 @@
+## v0.2.0
+
+- Prefer amazing_print to awesome_print.
+
 ## v0.1.6
 
 - Support composable matchers and matching arguments usecase
