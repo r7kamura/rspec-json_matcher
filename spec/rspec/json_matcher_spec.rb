@@ -160,18 +160,18 @@ describe RSpec::JsonMatcher do
           }
         ].to_json.should be_json_as([
           {
-            'url'          => /^https:/,
-            'id'           => /^\d+$/,
-            'description'  => /gist/,
-            'public'       => true,
-            'user'         => Hash,
-            'files'        => Hash,
-            'comments'     => Fixnum,
+            'url' => /^https:/,
+            'id' => /^\d+$/,
+            'description' => /gist/,
+            'public' => true,
+            'user' => Hash,
+            'files' => Hash,
+            'comments' => Fixnum,
             'comments_url' => /^https:/,
-            'html_url'     => /^https:/,
+            'html_url' => /^https:/,
             'git_pull_url' => /^git:/,
             'git_push_url' => /^git@/,
-            'created_at'   => /^\d\d\d\d-\d\d-\d\dT\d\d:\d\d:\d\dZ/,
+            'created_at' => /^\d\d\d\d-\d\d-\d\dT\d\d:\d\d:\d\dZ/,
           }
         ])
       end
