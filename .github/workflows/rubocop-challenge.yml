@@ -1,0 +1,10 @@
+name: rubocop-challenge
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: r7kamura/rubocop-challenge@main
