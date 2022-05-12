@@ -1,1 +1,1 @@
-require "rspec/json_matcher"
+require 'rspec/json_matcher'
