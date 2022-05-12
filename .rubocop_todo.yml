@@ -201,19 +201,6 @@ Style/SpecialGlobalVars:
   Exclude:
     - 'rspec-json_matcher.gemspec'
 
-# Offense count: 210
-# This cop supports safe auto-correction (--auto-correct).
-# Configuration parameters: EnforcedStyle, ConsistentQuotesInMultiline.
-# SupportedStyles: single_quotes, double_quotes
-Style/StringLiterals:
-  Exclude:
-    - 'lib/rspec-json_matcher.rb'
-    - 'lib/rspec/json_matcher.rb'
-    - 'lib/rspec/json_matcher/abstract_matcher.rb'
-    - 'lib/rspec/json_matcher/version.rb'
-    - 'rspec-json_matcher.gemspec'
-    - 'spec/rspec/json_matcher_spec.rb'
-    - 'spec/spec_helper.rb'
 
 # Offense count: 1
 # This cop supports safe auto-correction (--auto-correct).
