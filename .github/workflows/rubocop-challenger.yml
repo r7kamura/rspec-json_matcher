@@ -14,6 +14,7 @@ jobs:
           ruby-version: 2.7.6
       - run: git config remote.origin.url "git@github.com:${GITHUB_REPOSITORY}.git"
       - run: gem install rubocop_challenger
+      - run: git status
       - run: rubocop_challenger go --email=rubocop-challenger@example.com --name="Rubocop Challenger"
         env:
           GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
