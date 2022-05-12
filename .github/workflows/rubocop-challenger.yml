@@ -15,6 +15,6 @@ jobs:
       - run: git config remote.origin.url "git@github.com:${GITHUB_REPOSITORY}.git"
       - run: gem install rubocop_challenger
       - run: git status
-      - run: rubocop_challenger go --email=rubocop-challenger@example.com --name="Rubocop Challenger"
+      - run: rubocop_challenger go --email=rubocop-challenger@example.com --name="Rubocop Challenger" --base-branch=main
         env:
           GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
