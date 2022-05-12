@@ -36,7 +36,7 @@ describe RSpec::JsonMatcher do
           'a' => 1,
           'b' => 2,
         }.to_json.should_not be_json_as(
-          'a' => 1,
+          'a' => 1
         )
       end
     end
@@ -47,7 +47,7 @@ describe RSpec::JsonMatcher do
           'a' => 1,
         }.to_json.should_not be_json_as(
           'a' => 1,
-          'b' => 2,
+          'b' => 2
         )
       end
     end
@@ -59,7 +59,7 @@ describe RSpec::JsonMatcher do
           'b' => 2,
         }.to_json.should_not be_json_as(
           'a' => 2,
-          'b' => 2,
+          'b' => 2
         )
       end
     end
@@ -71,7 +71,7 @@ describe RSpec::JsonMatcher do
           'b' => 2,
         }.to_json.should be_json_as(
           'a' => 1,
-          'b' => 2,
+          'b' => 2
         )
       end
     end
@@ -81,7 +81,7 @@ describe RSpec::JsonMatcher do
         {
           'a' => nil,
         }.to_json.should_not be_json_as(
-          'b' => nil,
+          'b' => nil
         )
       end
     end
@@ -94,7 +94,7 @@ describe RSpec::JsonMatcher do
         ].to_json.should_not be_json_as(
           [
             'a',
-          ],
+          ]
         )
       end
     end
@@ -109,7 +109,7 @@ describe RSpec::JsonMatcher do
             'a',
             'b',
             'c',
-          ],
+          ]
         )
       end
     end
@@ -124,7 +124,7 @@ describe RSpec::JsonMatcher do
             'a',
             'b',
             nil,
-          ],
+          ]
         )
       end
     end
@@ -205,7 +205,7 @@ describe RSpec::JsonMatcher do
           'a' => 1,
           'b' => 2,
         }.to_json.should be_json_including(
-          'a' => 1,
+          'a' => 1
         )
       end
     end
@@ -216,7 +216,7 @@ describe RSpec::JsonMatcher do
           'a' => 1,
         }.to_json.should_not be_json_including(
           'a' => 1,
-          'b' => 2,
+          'b' => 2
         )
       end
     end
@@ -228,7 +228,7 @@ describe RSpec::JsonMatcher do
           'b' => 2,
         }.to_json.should_not be_json_including(
           'a' => 2,
-          'b' => 2,
+          'b' => 2
         )
       end
     end
@@ -240,7 +240,7 @@ describe RSpec::JsonMatcher do
           'b' => 2,
         }.to_json.should_not be_json_including(
           'a' => 0,
-          'b' => 2,
+          'b' => 2
         )
       end
     end
@@ -252,7 +252,7 @@ describe RSpec::JsonMatcher do
           'b' => 2,
         }.to_json.should be_json_including(
           'a' => 1,
-          'b' => 2,
+          'b' => 2
         )
       end
     end
@@ -262,7 +262,7 @@ describe RSpec::JsonMatcher do
         {
           'a' => nil,
         }.to_json.should_not be_json_including(
-          'b' => nil,
+          'b' => nil
         )
       end
     end
@@ -275,7 +275,7 @@ describe RSpec::JsonMatcher do
         ].to_json.should be_json_including(
           [
             'a',
-          ],
+          ]
         )
       end
     end
@@ -290,7 +290,7 @@ describe RSpec::JsonMatcher do
             'a',
             'b',
             'c',
-          ],
+          ]
         )
       end
     end
@@ -305,7 +305,7 @@ describe RSpec::JsonMatcher do
             'a',
             'b',
             nil,
-          ],
+          ]
         )
       end
     end
