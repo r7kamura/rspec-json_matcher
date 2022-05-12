@@ -17,7 +17,7 @@ describe RSpec::JsonMatcher do
     context 'when used with a composable matcher' do
       it 'matches' do
         {
-          'a' => {'b' => 1}.to_json
+          'a' => { 'b' => 1 }.to_json
         }.should match('a' => be_json)
       end
     end
@@ -186,7 +186,7 @@ describe RSpec::JsonMatcher do
     context 'when used with a composable matcher' do
       it 'matches' do
         {
-          'a' => {'b' => 1}.to_json
+          'a' => { 'b' => 1 }.to_json
         }.should match('a' => be_json_as('b' => 1))
       end
     end
@@ -313,7 +313,7 @@ describe RSpec::JsonMatcher do
     context 'when used with a composable matcher' do
       it 'matches' do
         {
-          'a' => {'b' => 1, 'c' => 2}.to_json
+          'a' => { 'b' => 1, 'c' => 2 }.to_json
         }.should match('a' => be_json_including('b' => 1))
       end
     end
