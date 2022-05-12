@@ -61,7 +61,7 @@ module RSpec
 
       def inspection(prefix = nil)
         messages = ["expected #{prefix}to match:", expected.ai(indent: -2), '', 'actual:', parsed.ai(indent: -2), '']
-        messages.push "reason: #{reasons.reverse.join(".")}" unless reasons.empty?
+        messages.push "reason: #{reasons.reverse.join('.')}" unless reasons.empty?
         messages.join("\n")
       end
     end
