@@ -88,13 +88,6 @@ Naming/PredicateName:
     - 'lib/rspec/json_matcher/exact_comparer.rb'
     - 'lib/rspec/json_matcher/fuzzy_comparer.rb'
 
-# Offense count: 2
-# This cop supports safe auto-correction (--auto-correct).
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: prefer_alias, prefer_alias_method
-Style/Alias:
-  Exclude:
-    - 'lib/rspec/json_matcher/abstract_matcher.rb'
 
 # Offense count: 1
 # This cop supports safe auto-correction (--auto-correct).
