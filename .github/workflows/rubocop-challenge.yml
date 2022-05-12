@@ -1,4 +1,4 @@
-name: rubocop-challenger
+name: rubocop-challenge
 
 on:
   workflow_dispatch:
