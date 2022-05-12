@@ -22,7 +22,7 @@ module RSpec
         false
       end
 
-      alias_method :===, :matches?
+      alias === matches?
 
       def compare(&reason)
         raise NotImplementedError, "You must implement #{self.class}#compare"
@@ -47,7 +47,7 @@ module RSpec
           inspection('not ')
         end
       end
-      alias :failure_message_when_negated :negative_failure_message
+      alias failure_message_when_negated negative_failure_message
 
       private
 
