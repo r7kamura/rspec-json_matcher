@@ -29,12 +29,12 @@ module RSpec
       end
 
       def description
-        "be JSON"
+        'be JSON'
       end
 
       def failure_message
         if has_parser_error?
-          "expected value to be parsed as JSON, but failed"
+          'expected value to be parsed as JSON, but failed'
         else
           inspection
         end
@@ -42,9 +42,9 @@ module RSpec
 
       def negative_failure_message
         if has_parser_error?
-          "expected value not to be parsed as JSON, but succeeded"
+          'expected value not to be parsed as JSON, but succeeded'
         else
-          inspection("not ")
+          inspection('not ')
         end
       end
       alias :failure_message_when_negated :negative_failure_message
@@ -60,7 +60,7 @@ module RSpec
       end
 
       def inspection(prefix = nil)
-        messages = ["expected #{prefix}to match:", expected.ai(indent: -2), "", "actual:", parsed.ai(indent: -2), ""]
+        messages = ["expected #{prefix}to match:", expected.ai(indent: -2), '', 'actual:', parsed.ai(indent: -2), '']
         messages.push "reason: #{reasons.reverse.join(".")}" unless reasons.empty?
         messages.join("\n")
       end

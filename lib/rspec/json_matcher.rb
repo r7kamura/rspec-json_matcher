@@ -1,12 +1,12 @@
-require "rspec/json_matcher/version"
-require "rspec/json_matcher/abstract_comparer"
-require "rspec/json_matcher/exact_comparer"
-require "rspec/json_matcher/fuzzy_comparer"
-require "rspec/json_matcher/abstract_matcher"
-require "rspec/json_matcher/exact_matcher"
-require "rspec/json_matcher/fuzzy_matcher"
-require "json"
-require "amazing_print"
+require 'rspec/json_matcher/version'
+require 'rspec/json_matcher/abstract_comparer'
+require 'rspec/json_matcher/exact_comparer'
+require 'rspec/json_matcher/fuzzy_comparer'
+require 'rspec/json_matcher/abstract_matcher'
+require 'rspec/json_matcher/exact_matcher'
+require 'rspec/json_matcher/fuzzy_matcher'
+require 'json'
+require 'amazing_print'
 
 module RSpec
   module JsonMatcher
