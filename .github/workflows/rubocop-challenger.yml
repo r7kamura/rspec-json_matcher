@@ -8,12 +8,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: ruby/setup-ruby@v1
-        with:
-          bundler-cache: true
-          ruby-version: 2.7.6
-      - run: gem install rubocop_challenger
-      - run: git status
-      - run: rubocop_challenger go --email="${GITHUB_ACTOR}@users.noreply.github.com" --name="${GITHUB_ACTOR}" --base-branch=main
-        env:
-          GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: r7kamura/rubocop-challenge@main
