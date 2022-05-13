@@ -159,21 +159,21 @@ describe RSpec::JsonMatcher do
             'created_at' => '2010-04-14T02:15:15Z'
           }
         ].to_json.should be_json_as([
-          {
-            'url' => /^https:/,
-            'id' => /^\d+$/,
-            'description' => /gist/,
-            'public' => true,
-            'user' => Hash,
-            'files' => Hash,
-            'comments' => Fixnum,
-            'comments_url' => /^https:/,
-            'html_url' => /^https:/,
-            'git_pull_url' => /^git:/,
-            'git_push_url' => /^git@/,
-            'created_at' => /^\d\d\d\d-\d\d-\d\dT\d\d:\d\d:\d\dZ/,
-          }
-        ])
+                                      {
+                                        'url' => /^https:/,
+                                        'id' => /^\d+$/,
+                                        'description' => /gist/,
+                                        'public' => true,
+                                        'user' => Hash,
+                                        'files' => Hash,
+                                        'comments' => Fixnum,
+                                        'comments_url' => /^https:/,
+                                        'html_url' => /^https:/,
+                                        'git_pull_url' => /^git:/,
+                                        'git_push_url' => /^git@/,
+                                        'created_at' => /^\d\d\d\d-\d\d-\d\dT\d\d:\d\d:\d\dZ/,
+                                      }
+                                    ])
       end
     end
 

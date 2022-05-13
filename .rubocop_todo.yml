@@ -27,12 +27,6 @@ Layout/EmptyLineAfterMagicComment:
   Exclude:
     - 'rspec-json_matcher.gemspec'
 
-# Offense count: 2
-# This cop supports safe auto-correction (--auto-correct).
-# Configuration parameters: IndentationWidth.
-# SupportedStyles: special_inside_parentheses, consistent, align_brackets
-Layout/FirstArrayElementIndentation:
-  EnforcedStyle: consistent
 
 # Offense count: 1
 # This cop supports safe auto-correction (--auto-correct).
