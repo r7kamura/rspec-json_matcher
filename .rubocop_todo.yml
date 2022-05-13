@@ -174,10 +174,3 @@ Style/TrailingCommaInArrayLiteral:
 Style/TrailingCommaInHashLiteral:
   Exclude:
     - 'spec/rspec/json_matcher_spec.rb'
-
-# Offense count: 8
-# This cop supports safe auto-correction (--auto-correct).
-# Configuration parameters: MinSize, WordRegex.
-# SupportedStyles: percent, brackets
-Style/WordArray:
-  EnforcedStyle: brackets

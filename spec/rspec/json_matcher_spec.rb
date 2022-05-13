@@ -88,9 +88,9 @@ describe RSpec::JsonMatcher do
 
     context 'with subset array' do
       it 'does not match' do
-        [
-          'a',
-          'b',
+        %w[
+          a
+          b
         ].to_json.should_not be_json_as(
           [
             'a',
@@ -101,14 +101,14 @@ describe RSpec::JsonMatcher do
 
     context 'with superset array' do
       it 'does not match' do
-        [
-          'a',
-          'b',
+        %w[
+          a
+          b
         ].to_json.should_not be_json_as(
-          [
-            'a',
-            'b',
-            'c',
+          %w[
+            a
+            b
+            c
           ]
         )
       end
@@ -116,9 +116,9 @@ describe RSpec::JsonMatcher do
 
     context 'with superset array with nil' do
       it 'does not match' do
-        [
-          'a',
-          'b',
+        %w[
+          a
+          b
         ].to_json.should_not be_json_as(
           [
             'a',
@@ -269,9 +269,9 @@ describe RSpec::JsonMatcher do
 
     context 'with subset array' do
       it 'does not match' do
-        [
-          'a',
-          'b',
+        %w[
+          a
+          b
         ].to_json.should be_json_including(
           [
             'a',
@@ -282,14 +282,14 @@ describe RSpec::JsonMatcher do
 
     context 'with superset array' do
       it 'does not match' do
-        [
-          'a',
-          'b',
+        %w[
+          a
+          b
         ].to_json.should_not be_json_including(
-          [
-            'a',
-            'b',
-            'c',
+          %w[
+            a
+            b
+            c
           ]
         )
       end
@@ -297,9 +297,9 @@ describe RSpec::JsonMatcher do
 
     context 'with superset array with nil' do
       it 'does not match' do
-        [
-          'a',
-          'b',
+        %w[
+          a
+          b
         ].to_json.should_not be_json_including(
           [
             'a',
