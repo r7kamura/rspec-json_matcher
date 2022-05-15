@@ -93,7 +93,7 @@ describe RSpec::JsonMatcher do
           b
         ].to_json.should_not be_json_as(
           [
-            'a',
+            'a'
           ]
         )
       end
@@ -123,7 +123,7 @@ describe RSpec::JsonMatcher do
           [
             'a',
             'b',
-            nil,
+            nil
           ]
         )
       end
@@ -274,7 +274,7 @@ describe RSpec::JsonMatcher do
           b
         ].to_json.should be_json_including(
           [
-            'a',
+            'a'
           ]
         )
       end
@@ -304,7 +304,7 @@ describe RSpec::JsonMatcher do
           [
             'a',
             'b',
-            nil,
+            nil
           ]
         )
       end
