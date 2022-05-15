@@ -1,0 +1,10 @@
+name: rubocop-todo-corrector
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: r7kamura/rubocop-todo-corrector@main
