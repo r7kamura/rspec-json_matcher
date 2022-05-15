@@ -166,7 +166,7 @@ describe RSpec::JsonMatcher do
                                         'public' => true,
                                         'user' => Hash,
                                         'files' => Hash,
-                                        'comments' => Fixnum,
+                                        'comments' => Integer,
                                         'comments_url' => /^https:/,
                                         'html_url' => /^https:/,
                                         'git_pull_url' => /^git:/,
