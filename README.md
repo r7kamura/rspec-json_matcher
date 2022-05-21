@@ -10,15 +10,13 @@ This library provides RSpec matcher for testing JSON string.
 
 ## Installation
 
-Install RSpec::JsonMatcher:
-```shell
-$ gem install rspec-json_matcher
-```
-Or add it to your Gemfile:
-```ruby
-gem 'rspec-json_matcher'
-```
+Install the gem and add to the application's Gemfile by executing:
 
+    $ bundle add rspec-json_matcher
+
+If bundler is not being used to manage dependencies, install the gem by executing:
+
+    $ gem install rspec-json_matcher
 ## Usage
 ### Configuration
 ```ruby
