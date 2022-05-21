@@ -8,6 +8,17 @@ This library provides RSpec matcher for testing JSON string.
 * handy pattern matching with `#===` method like case-when statement
 * supporting nested pattern matching
 
+## Installation
+
+Install Airborne:
+```shell
+$ gem install rspec-json_matcher
+```
+Or add it to your Gemfile:
+```ruby
+gem 'rspec-json_matcher'
+```
+
 ## Usage
 ### Configuration
 ```ruby
@@ -73,6 +84,3 @@ RSpec.configuration.include RSpec::JsonMatcher
   }
 ])
 ```
-
-### Failure message
-![](http://dl.dropbox.com/u/5978869/image/20130426_005849.png)
