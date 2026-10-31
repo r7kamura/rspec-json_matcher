@@ -15,13 +15,6 @@ Gemspec/OrderedDependencies:
     - 'rspec-json_matcher.gemspec'
 
 # Offense count: 1
-# Configuration parameters: Include.
-# Include: **/*.gemspec
-Gemspec/RequiredRubyVersion:
-  Exclude:
-    - 'rspec-json_matcher.gemspec'
-
-# Offense count: 1
 # Configuration parameters: IgnoredMethods, CountRepeatedAttributes.
 Metrics/AbcSize:
   Max: 37
