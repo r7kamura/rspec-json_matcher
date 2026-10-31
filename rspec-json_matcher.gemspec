@@ -13,6 +13,8 @@ Gem::Specification.new do |spec|
   spec.homepage      = 'https://github.com/r7kamura/rspec-json_matcher'
   spec.license       = 'MIT'
 
+  spec.required_ruby_version = '>= 3.3'
+
   spec.metadata['rubygems_mfa_required'] = 'true'
 
   spec.files         = `git ls-files`.split($INPUT_RECORD_SEPARATOR)
