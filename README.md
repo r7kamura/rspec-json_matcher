@@ -1,7 +1,5 @@
 # RSpec::JsonMatcher
 
-[![test](https://github.com/r7kamura/rspec-json_matcher/actions/workflows/test.yml/badge.svg)](https://github.com/r7kamura/rspec-json_matcher/actions/workflows/test.yml)
-
 This library provides RSpec matcher for testing JSON string.
 
 * parsing a given value as JSON string
